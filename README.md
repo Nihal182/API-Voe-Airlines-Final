@@ -1,36 +1,33 @@
-# Projeto ASP.NET Core Web API para gerenciamento da VoeAirlines By Embraery
+# Projeto Final - Turma QUA.315.024 - Desenvolvedor C#
 
-## Como executar o projeto
+<h1 align="center">Projeto VoeAirlines</h1>
+    <p align="center">Projeto de manutenção e voos de aeronaves</p>
 
-**Clonar o repositório**
-```
-git clone https://github.com/romulosilvestre/gabarito-api-dev-csharp.git
-```
+<h3>Funções do projeto:</h3>
 
-**Restaurar os pacotes**
+<ul>
+    <li>Cadastro de Aeronaves</li>
+    <li>Cadastro de Tipos de Aeronaves</li>
+    <li>Gerenciamento de Voos</li>
+    <li>Gerenciamento de Manutenções</li>
+    <li>Emissão de relatórios em PDF</li>
+</ul>
 
-Navegar para a pasta do projeto clonado e executar o seguinte comando:
+<h3>Tecnologias Utilizadas:</h3>
 
-```
-dotnet restore
-```
+<ul>
+    <li>.NET 6</li>
+    <li>C# 10</li>
+    <li>ASP.NET Core Web API</li>
+    <li>NPM</li>
+    <li>Node.js</li>
+    <li>API RESTFull</li>
+    <li>FrontEnd React - AXIOS</li>
 
-**Executar a aplicação**
+</ul>
 
-Executar o seguinte comando ou utilizar a ferramenta de Debug do Visual Studio u Visual Studio Code (normalmente pressionando F5):
-```
-dotnet run
-```
-
-## Como testar a API
-
-**Acessar a interface de teste do Swagger***
-A UI do Swagger estará disponível na URL https://localhost:[porta]/swagger (a porta pode variar e deve ser observada no terminal ao executar o projeto).
-
-**Consumir os endpoints**
-Sugestão de ordem para testar a aplicação:
-
-1) Criar, editar e excluir Aeronaves
-2) Criar, editar e excluir Manutenção
-3) Criar, editar e excluir Piloto
-4) Criar, editar e excluir Voo
+<h3>Ferramentas:</h3>
+<ul>
+    <li>Swagger</li>
+    <li>SQL Server</li>
+    <li>Extensões VSCode</li>
