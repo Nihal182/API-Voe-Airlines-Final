@@ -13,6 +13,7 @@ public class VoeAirlinesContext: DbContext
         _configuration = configuration;
     }
 
+    public DbSet<Login> Logins => Set<Login>();
     public DbSet<Aeronave> Aeronaves => Set<Aeronave>();
     public DbSet<Piloto> Pilotos => Set<Piloto>();
     public DbSet<Voo> Voos => Set<Voo>();
@@ -31,5 +32,6 @@ public class VoeAirlinesContext: DbContext
         modelBuilder.ApplyConfiguration(new VooConfiguration());
         modelBuilder.ApplyConfiguration(new CancelamentoConfiguration());
         modelBuilder.ApplyConfiguration(new ManutencaoConfiguration());
+        modelBuilder.ApplyConfiguration(new LoginConfiguration());
     }
 }

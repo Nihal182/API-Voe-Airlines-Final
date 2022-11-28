@@ -2,7 +2,7 @@ using VoeAirlines.Services;
 using VoeAirlines.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CiaAerea.Controllers;
+namespace VoeAirlines.Controllers;
 
 [Route("api/aeronaves")]
 [ApiController]
