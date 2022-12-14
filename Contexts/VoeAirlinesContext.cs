@@ -34,4 +34,9 @@ public class VoeAirlinesContext: DbContext
         modelBuilder.ApplyConfiguration(new ManutencaoConfiguration());
         modelBuilder.ApplyConfiguration(new LoginConfiguration());
     }
+
+    internal void DeletarLogin(Login login)
+    {
+        throw new NotImplementedException();
+    }
 }

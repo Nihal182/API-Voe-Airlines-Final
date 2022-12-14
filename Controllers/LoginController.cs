@@ -4,10 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("api/login")]
 [ApiController]
-
-public class LoginController : ControllerBase 
+public class LoginController : ControllerBase
 {
-
     private readonly LoginService _loginService;
 
     public LoginController(LoginService loginService)
@@ -16,18 +14,45 @@ public class LoginController : ControllerBase
     }
 
     [HttpPost]
-
-    public IActionResult AdicionarLogin(AdicionarLoginViewModel dados) {
+    public IActionResult AdicionarLogin(AdicionarLoginViewModel dados)
+    {
         var login = _loginService.AdicionarLogin(dados);
         return Ok(_loginService.ListarLogin());
     }
 
     [HttpGet]
-
-    public IActionResult ListarLogin() {
+    public IActionResult ListarLogin()
+    {
         return Ok(_loginService.ListarLogin());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult ListarLoginPeloId(int id)
+    {
+        var login = _loginService.ListarLoginId(id);
 
+        if (login != null)
+        {
+            return Ok(login);
+        }
+
+        return NotFound();
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult AtualizarLogin(int id, AtualizarLoginViewModel dados)
+    {
+        if (id != dados.Id)
+            return BadRequest("O id informado na URL é diferente do id informado no corpo da requisição.");
+
+        var login = _loginService.AtualizarLogin(dados);
+        return Ok(login);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletarLogin(int id)
+    {
+        _loginService.DeletarLogin(id);
+        return NoContent();
+    }
 }
- 

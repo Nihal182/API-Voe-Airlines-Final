@@ -16,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<VoeAirlinesContext>();
 builder.Services.AddTransient<AeronaveService>();
+builder.Services.AddTransient<LoginService>();
 builder.Services.AddTransient<PilotoService>();
 builder.Services.AddTransient<VooService>();
 builder.Services.AddTransient<ManutencaoService>();
@@ -31,9 +32,14 @@ builder.Services.AddTransient<ExcluirVooValidator>();
 builder.Services.AddTransient<CancelarVooValidator>();
 builder.Services.AddTransient<AdicionarManutencaoValidator>();
 builder.Services.AddTransient<AtualizarManutencaoValidator>();
-builder.Services.AddTransient<ExcluirManutencaoValidator>();
+builder.Services.AddTransient<ExcluirManutencaoValidator>(); 
 
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+#region [Cors]
+   builder.Services.AddCors();
+#endregion
+
 
 var app = builder.Build();
 
@@ -45,6 +51,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+#region [Cors]
+  app.UseCors(
+    c=>{
+        c.AllowAnyHeader();
+        c.AllowAnyMethod();
+        c.AllowAnyOrigin();
+    }
+
+  );
+#endregion
 
 app.UseAuthorization();
 
